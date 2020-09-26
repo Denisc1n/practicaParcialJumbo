@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <h2>Verificar Elemento</h2>
+      <div>
+        <label>Nombre:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="name"
+          value="{{ photoUrl }}"
+          disabled
+        />
+      </div>
+      <div>
+        <label>Fabricante:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="manufacturer"
+          value="{{ photoUrl }}"
+          disabled
+        />
+      </div>
+      <div>
+        <label>Foto:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="photoUrl"
+          value="{{ photoUrl }}"
+          disabled
+        />
+      </div>
+      <p>
+        Al presionar el boton 'Limpiar' se reiniciaran los campos de muestra.
+      </p>
+      <p>
+        <a class="btn btn-secondary" role="button" (click)="cleanFields()"
+          >Limpiar</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <h2>Modificar Elemento</h2>
+      <div>
+        <label>Nombre:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="name"
+          value="{{ inputElementToModify?.data.name }}"
+        />
+      </div>
+      <div>
+        <label>Fabricante:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="manufacturer"
+          value="{{ inputElementToModify?.data.manufacturer }}"
+        />
+      </div>
+      <div>
+        <label>Foto:</label
+        ><input
+          class="form-control"
+          [(ngModel)]="photoUrl"
+          value="{{ inputElementToModify?.data.photo }}"
+        />
+      </div>
+      <p>Al presionar el boton modificar se efectuaran los cambios.</p>
+      <p>
+        <a
+          class="btn btn-secondary"
+          role="button"
+          (click)="modifyElement(inputElementToModify)"
+          >Modificar</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

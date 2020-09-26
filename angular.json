@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "practicaParcialJumbo"
+    }
+  },
+  "defaultProject": "practicaParcialJumbo",
+  "cli": {
+    "analytics": "de89ec16-d81f-47d4-91ad-75893c6cb244"
+  }
 }

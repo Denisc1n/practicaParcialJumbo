@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main role="main">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Listado de Elementos</h1>
+          <p>
+            <a
+              class="btn btn-primary btn-lg"
+              href="#"
+              role="button"
+              (click)="handleCambiarVista()"
+              >Cambiar Vista</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="container" *ngIf="viewMode === 1">
+        <div class="row" *ngFor="let elemento of colleccionElementos">
+          <div class="card mb-4 shadow-sm">
+            <img
+              [src]="elemento.data.photo"
+              alt=""
+              style="width: 200px; height: 100px"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                {{ elemento.data.name }}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    (click)="emitDelete(elemento)"
+                  >
+                    Borrar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    (click)="emitView(elemento)"
+                  >
+                    Detalle
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    (click)="emitModify(elemento)"
+                  >
+                    Modificar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" *ngIf="viewMode === 0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Foto</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fabricante</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let elemento of colleccionElementos">
+              <td>
+                <img
+                  [src]="elemento.data.photo"
+                  alt=""
+                  style="width: 100px; height: 100px"
+                />
+              </td>
+              <td>{{ elemento.data.name }}</td>
+              <td>{{ elemento.data.manufacurer }}</td>
+              <td>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      (click)="emitDelete(elemento)"
+                    >
+                      Borrar
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      (click)="emitView(elemento)"
+                    >
+                      Detalle
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      (click)="emitModify(elemento)"
+                    >
+                      Modificar
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+    </main>
+  </body>
+</html>
